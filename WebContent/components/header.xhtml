@@ -1,0 +1,27 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-8">
+				<a href="#{request.contextPath}/index.html">
+					<img class="img-responsive center-block header-image" src="#{request.contextPath}/img/the_league_rotational.png" />
+				</a>
+
+				<em><span id="header-date"></span></em>
+
+				<script src="js/dateSetter.js"></script>
+					
+			</div>
+			<div class="col-lg-2"></div>
+		</div>
+	</div>
+	
+	<hr/>
+	
+</ui:composition>
+

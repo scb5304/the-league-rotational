@@ -1,0 +1,115 @@
+<ui:composition template="template.xhtml" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<ui:define name="params">
+		<f:metadata>
+			<f:viewParam name="url" value="#{articleBean.url}" />
+		</f:metadata>
+	</ui:define>
+
+	<ui:param name="article" value="#{articleBean.article}" />
+
+	<ui:define name="title">
+		#{article.title} - The League Rotational
+	</ui:define>
+
+	<ui:define name="twitter-card">
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@therotational" />
+		<meta name="twitter:creator" content="@therotational" />
+		<meta name="twitter:url" content="http://leaguerotational.com/article/#{article.url}" />
+		<meta name="twitter:title" content="#{article.title} - The League Rotational" />
+		<meta name="twitter:description" content="#{article.description}" />
+		<c:if test="#{not empty article.image}">
+			<meta name="twitter:image" content="http://leaguerotational.com/#{article.image}" />
+		</c:if>
+		<c:if test="#{empty article.image}">
+			<meta name="twitter:image" content="http://leaguerotational.com/img/the_league_rotational.png" />
+		</c:if>
+	</ui:define>
+	
+	<ui:define name="og">
+		<meta property="og:title" content="#{article.title}" />
+		<meta property="og:site_name" content="The League Rotational" />
+		<meta property="og:url" content="http://leaguerotational.com/article/#{article.url}" />
+		<meta property="og:description" content="#{article.description}" />
+		<meta property="og:image" content="http://leaguerotational.com/#{article.thumbnail}" />
+	</ui:define>
+
+	<ui:define name="content">
+		<div class="row">	
+			<div class="col-md-9">	
+				<div id="article-panel" class="panel panel-default">
+					<div id="article-panel-body" class="panel-body">
+		
+						<ui:param name="article" value="#{articleBean.article}" />
+		
+						<div class="page-header">
+							<h3 class="article-title">#{article.title}</h3>
+							<small><h:outputText class="article-date pull-right" value="#{article.date}" escape="false" /></small>
+		
+						</div>
+						
+						<ui:param name="articleLink" value="https://leaguerotational.com/article/#{article.url}" escape="true" />
+						<div class="article-content">
+							<ui:fragment rendered="#{not empty article.image}">
+								<img class="article-featured-image img-responsive" src="#{request.contextPath}/#{article.image}" />
+							</ui:fragment>
+							<h:outputText value="#{article.content}" escape="false" />
+							<div id="share-buttons" class="row">
+								<div class="col-md-2 pull-left">
+									<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://leaguerotational.com/article/#{article.url}" data-text="#{article.shortTitle} - The League Rotational" data-via="therotational" data-size="large" data-count="none">Tweet</a>
+									<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+								</div>
+								
+								<div class="facebook-col col-md-2">
+									<script>(function(d, s, id) {var js, fjs = d.getElementsByTagName(s)[0];if (d.getElementById(id)) return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.3";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+									<div id="fb-root"></div>
+									<div class="fb-share-button" data-href="https://leaguerotational.com/article/#{article.url}" data-layout="button"></div>
+								</div>
+							</div>
+						</div>
+		
+						<div class="tags-section">
+							<p>Tags:</p>
+							<ui:repeat value="#{article.tags}" var="tag">
+								<h:link outcome="search.html?type=tag&amp;content=#{tag}&amp;page=1">
+									<button class="btn btn-default tag">#{tag}</button>
+								</h:link>
+							</ui:repeat>
+						</div>
+					</div>
+				</div>
+		
+				<h4 class="rotate-articles">Rotate articles</h4>
+		
+				<div class="navigate-article-panel panel panel-default">
+					<ui:param name="nextArticle" value="#{articleBean.navigateArticles[1]}" />
+					<ui:param name="previousArticle" value="#{articleBean.navigateArticles[0]}" />
+		
+					<div class="panel-body">
+						<div class="row">
+		
+							<div class="rotate-article-section col-md-6">
+								<ui:fragment rendered="#{nextArticle ne null}">
+									<h:link outcome="article?url=#{nextArticle.url}" value="&lt;&lt; #{nextArticle.title}" />
+								</ui:fragment>
+							</div>
+
+							
+							<div class="rotate-article-section col-md-6">
+								<ui:fragment rendered="#{previousArticle ne null}">
+									<h:link outcome="article?url=#{previousArticle.url}" value="&gt;&gt; #{previousArticle.title}" />
+								</ui:fragment>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<ui:include src="components/sidebar.xhtml" />
+		</div>
+	</ui:define>
+
+</ui:composition>

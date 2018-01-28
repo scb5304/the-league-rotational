@@ -1,0 +1,110 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+    
+    <div class="navbar navbar-default navbar-static-top">
+		<div class="container">
+			<div class="row">
+				<div class="navbar-header">	
+					
+					<a href="#{request.contextPath}/index.html" class="navbar-brand">
+						<img class="navbar-logo" src="#{request.contextPath}/img/logo_simple_light.png" alt="The Force Pulse"/>
+					</a>
+					
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+
+				</div>
+			
+				<div class="collapse navbar-collapse">
+	
+					<ul class="nav navbar-nav navbar-center">
+						<ui:param name="firstTag" value="#{articleBean.article.tags[0]}" />
+						<ui:param name="searchContent" value="#{searchBean.fmtdContent}" />
+						
+						<!-- Home -->
+						<ui:param name="isActive" value="#{searchContent eq null and (firstTag ne 'esports' and
+						firstTag ne 'game updates' and firstTag ne 'riot games' and firstTag ne 'community' and firstTag ne 'miscellaneous')}"/>
+						
+						<ui:fragment rendered="#{isActive == true}">
+							<li class="active"><a href="#{request.contextPath}/index.html">Home</a></li>
+						</ui:fragment>
+						
+						<ui:fragment rendered="#{isActive == false}">
+							<li><a href="#{request.contextPath}/index.html">Home</a></li>
+						</ui:fragment>
+						
+						<!-- Esports -->
+						<ui:param name="isActive" value="#{searchContent eq 'Esports' or firstTag == 'esports'}" />
+						<ui:param name="linkOutcome" value="search?type=tag&amp;content=esports&amp;page=1" />
+						
+						<ui:fragment rendered="#{isActive == true}">
+							<li class="active"><h:link outcome="#{linkOutcome}" value="Esports" /></li>
+						</ui:fragment>
+						
+						<ui:fragment rendered="#{isActive == false}">
+							<li><h:link outcome="#{linkOutcome}" value="Esports" /></li>
+						</ui:fragment>
+						
+						<!-- Game Updates -->
+						<ui:param name="isActive" value="#{searchContent eq 'Game Updates' or firstTag == 'game updates'}" />
+						<ui:param name="linkOutcome" value="search?type=tag&amp;content=game updates&amp;page=1" />
+						
+						<ui:fragment rendered="#{isActive == true}">
+							<li class="active"><h:link outcome="#{linkOutcome}" value="Game Updates" /></li>
+						</ui:fragment>
+						
+						<ui:fragment rendered="#{isActive == false}">
+							<li><h:link outcome="#{linkOutcome}" value="Game Updates" /></li>
+						</ui:fragment>
+						
+						<!-- Riot Games -->
+						<ui:param name="isActive" value="#{searchContent eq 'Riot Games' or firstTag == 'riot games'}" />
+						<ui:param name="linkOutcome" value="search?type=tag&amp;content=riot games&amp;page=1" />
+						
+						<ui:fragment rendered="#{isActive == true}">
+							<li class="active"><h:link outcome="#{linkOutcome}" value="Riot Games" /></li>
+						</ui:fragment>
+						
+						<ui:fragment rendered="#{isActive == false}">
+							<li><h:link outcome="#{linkOutcome}" value="Riot Games" /></li>
+						</ui:fragment>
+						
+						<!-- Community -->
+						<ui:param name="isActive" value="#{searchContent eq 'Community' or firstTag == 'community'}" />
+						<ui:param name="linkOutcome" value="search?type=tag&amp;content=community&amp;page=1" />
+						
+						<ui:fragment rendered="#{isActive == true}">
+							<li class="active"><h:link outcome="#{linkOutcome}" value="Community" /></li>
+						</ui:fragment>
+						
+						<ui:fragment rendered="#{isActive == false}">
+							<li><h:link outcome="#{linkOutcome}" value="Community" /></li>
+						</ui:fragment>
+						
+						<!-- Miscellaneous -->
+						<ui:param name="isActive" value="#{searchContent eq 'Miscellaneous' or firstTag == 'miscellaneous'}" />
+						<ui:param name="linkOutcome" value="search?type=tag&amp;content=miscellaneous&amp;page=1" />
+						
+						<ui:fragment rendered="#{isActive == true}">
+							<li class="active"><h:link outcome="#{linkOutcome}" value="Miscellaneous" /></li>
+						</ui:fragment>
+						
+						<ui:fragment rendered="#{isActive == false}">
+							<li><h:link outcome="#{linkOutcome}" value="Miscellaneous" /></li>
+						</ui:fragment>
+
+					</ul>
+
+				</div>
+			</div>
+		</div>	
+	</div>
+	
+</ui:composition>

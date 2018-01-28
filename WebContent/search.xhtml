@@ -1,0 +1,80 @@
+<ui:composition 
+	template="template.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+    
+    <ui:define name="params">
+		<f:metadata>
+			<f:viewParam name="type" value="#{searchBean.type}" />
+			<f:viewParam name="content" value="#{searchBean.content}" />
+			<f:viewParam name="page" value="#{searchBean.page}" />
+		</f:metadata>	  
+	</ui:define>
+
+	<ui:param name="isTag" value="#{searchBean.type eq 'tag' and searchBean.fmtdContent ne 'Esports' and searchBean.fmtdContent ne 'Game Updates'
+		and searchBean.fmtdContent ne 'Riot Games' and searchBean.fmtdContent ne 'Community' and searchBean.fmtdContent ne 'Miscellaneous'}" />
+
+	<ui:define name="content">
+		<div class="row">
+			<div class="col-md-9">
+				<div id="article-panel" class="panel panel-default">
+					<div id="article-panel-body" class="panel-body">
+						<div class="page-header">
+							<ui:fragment rendered="#{isTag == true}">
+								<small><br/>Tagged with: &#160;</small>
+							</ui:fragment>
+							<h1><h:outputText value="#{searchBean.fmtdContent}" /></h1>
+						</div>
+						
+						<div id="article-content">
+							<ui:param name="results" value="#{searchBean.results}" />
+							<ui:fragment rendered="#{results.size() == 0 || results == null}">
+								Sorry! No results found.
+							</ui:fragment>
+		
+							<ui:repeat value="#{results}" var="result" varStatus="status">
+								<div class="row result">
+									<div class="col-sm-4">
+										<h:link outcome="article?url=#{result.url}">
+											<img class="result-image img-responsive" src="#{request.contextPath}/#{result.thumbnail}" />
+										</h:link>
+									</div>
+		
+									<div class="col-sm-8">
+										<h3>
+											<h:link class="recent-news-link" outcome="article?url=#{result.url}" value="#{result.title}" />
+										</h3>
+		
+										<h5>
+											<em><h:outputText value="#{result.date}" /></em>
+										</h5>
+									</div>
+									
+								</div>
+								<hr />
+								
+							</ui:repeat>
+						</div>
+						
+						<ui:fragment rendered="#{searchBean.prevPage}">
+							<h:link outcome="search?type=#{searchBean.type}&amp;content=#{searchBean.content}&amp;page=#{searchBean.page - 1}">
+								<button class="btn btn-default pull-left prev" type="submit">Previous</button>
+							</h:link>
+						</ui:fragment>
+		
+						<ui:fragment rendered="#{searchBean.nextPage}">
+							<h:link outcome="search?type=#{searchBean.type}&amp;content=#{searchBean.content}&amp;page=#{searchBean.page + 1}">
+								<button class="btn btn-default pull-right next" type="submit">Next</button>
+							</h:link>
+						</ui:fragment>
+					</div>
+					
+				</div>
+			</div>
+			<ui:include src="components/sidebar.xhtml" />
+		</div>
+		
+	</ui:define>
+</ui:composition>

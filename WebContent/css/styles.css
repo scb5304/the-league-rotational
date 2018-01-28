@@ -1,0 +1,356 @@
+/* NAVBAR CUSTOMIZATION GENERATED FROM http://work.smarchal.com/twbscolor/css/8034a05c2a82ecf0f1ffffff0 */
+.navbar-default {
+  font-family: 'Open Sans';
+  background-color: #8034a0;
+  border-color: #5c2a82;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #5c2a82;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: #5c2a82;
+}
+.navbar-default .navbar-toggle {
+  border-color: #5c2a82;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #5c2a82;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #ffffff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #ffffff;
+    background-color: #5c2a82;
+  }
+}
+/* END GENERATED NAVBAR CUSTOMIZATION */
+
+.navbar-brand, .navbar-nav li a {
+	line-height: 55px;
+    height: 55px;
+    padding-top: 0;
+	font-size: 14px;
+}
+
+.navbar-logo {
+	display:inline;
+	height:100%;
+	margin-right:5px;
+	margin-bottom: 3px;
+}
+
+.header-image {
+	margin-top: 5px;
+}
+
+#header-date {
+	display: block;
+	text-align: center;
+	font-size: 16px;
+}
+
+* {
+	border-radius: 0 !important;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	margin-bottom: 70px;
+	font-family: 'News Cycle', sans-serif;
+	font-size: 16px;
+	background-color: rgb(240,240,240);
+}
+
+.index-main-content {
+	margin-bottom: 20px;
+}
+
+.jumbotron {
+	padding-top: 30px;
+	padding-bottom: 15px;
+	margin-bottom: 40px;
+	border: 2px outset #5c2a82;
+	background: white;
+}
+
+.jumbotron-image {
+	margin:auto;
+	margin-bottom: 15px;
+	border: 2px solid #AAAAAA;
+}
+
+.jumbotron h1 {
+	font-size: 35px;
+	margin-top:10px;
+	font-family: 'Slabo+27px';
+}
+
+.jumbotron h1 a {
+	color: black;
+}
+
+.jumbotron h4 {
+	font-style: italic;
+}
+
+.jumbotron p {
+	font-size: 19px;
+}
+
+#recent-news-entire-section {
+	padding: 10px;
+}
+
+.recent-news-panel-body {
+	padding-top: 0;
+}
+
+.recent-news-title {
+	font-size: 40px;
+}
+
+.recent-news-title-row {
+	margin-bottom: 15px;
+}
+
+.recent-news-block {
+	border-top: 1px solid #DDDDDD;
+	padding-bottom: 5px;
+}
+
+.recent-news-link {
+	font-family: 'Slabo+27px';
+	color: black;
+}
+
+.recent-news-date {
+	color: black;
+}
+
+.view-all-news-btn {
+	margin-top: 11px;
+	margin-right:8px;
+	font-size: 16px;
+	padding-bottom: 8px;
+	color: rgb(128, 52, 160);
+	font-weight: bold;
+	border: 1px solid #CCCCCC;
+}
+
+
+#article-panel-body {
+	padding:25px;
+	padding-top:0;
+	padding-bottom:20px;
+	border: 1px solid #AAAAAA;
+}
+
+.page-header {
+	margin-top: 0;
+}
+
+.article-title {
+	font-style: oblique;
+	font-weight: bold;
+	font-family: 'Slabo+27px';
+	text-align:center;
+	font-size: 34px;
+	margin-bottom: 20px;
+}
+
+.article-date {
+	font-size: 16px;
+	margin-top: -14px;
+}
+
+.article-featured-image {
+	margin:auto;
+	margin-bottom: 25px;
+	border: 2px solid #AAAAAA;
+}
+
+.article-content {
+	margin-top: 30px;
+	font-size: 20px;
+}
+
+.article-section-title {
+	text-decoration: underline;
+	font-weight: bold;
+	padding-bottom: 5px;
+}
+
+blockquote {
+	color: rgb(100,100,100);
+}
+
+.inline-image {
+	float: left;
+	margin: 10px;
+	margin-right: 15px;
+}
+
+.article-content li {
+	padding-bottom: 8px;
+}
+
+#caption {
+	display: block;
+	text-align: center;	
+	margin-bottom: 20px;
+	margin-top: -18px;
+	font-size: 14px;
+}
+
+#share-buttons {
+	margin-top: 35px;
+}
+
+.facebook-col {
+	margin-top: -6px;
+}
+
+.fb-share-button, .fb-like {
+	transform: scale(1.27);
+    -ms-transform: scale(1.27);
+    -webkit-transform: scale(1.27);
+    -o-transform: scale(1.27);
+    -moz-transform: scale(1.27);
+}
+
+.tags-section {
+	border-width: 1px;
+	border-top-style: outset;
+	border-color: rgb(175,175,175);
+	margin-top:30px;
+	padding-top:20px;
+}
+
+.tags-section a {
+	text-decoration: none;
+}
+
+.tag {
+	margin: 5px;
+	padding-top: 5px;
+	font-size: 15px;
+}
+
+.rotate-articles {
+	margin-top: 50px;
+}
+
+.rotate-article-section {
+	padding: 20px;
+	padding-bottom: 10px;
+	padding-top: 5px;
+}
+
+.rotate-article-section a {
+	color: black;
+	font-size: 18px;
+}
+
+.btn{
+	background-image: none;
+	transition: all 0.3s ease-in-out 0s;		
+	-webkit-transition: all 0.3s ease-in-out 0s;	
+	white-space: normal;
+}
+
+.result {
+	margin-bottom: 20px;
+}
+
+.result-image {
+	border: 1px solid #AAAAAA;
+}
+
+.next, .prev {
+	margin-top: 0px;
+}
+
+.prev {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.next {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.sidebar-heading {
+	margin-bottom: 15px;
+}
+
+.search-bar {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.like-button-div {
+	margin-top: 15px;
+	margin-left: 7px;
+	margin-bottom: 10px;
+}
+
+.form-control:focus {
+	border-color: rgba(92,42,130,0.5);
+	webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(236, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(236, 168, 236, 0.6);
+	webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 175, 233, 0.6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(233, 175, 233, 0.6);
+}
+
+#bottom-nav-bar {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	/* Set the fixed height of the footer here */
+	height: 68px;
+}
+
+.footer {
+	padding: 8px;
+}

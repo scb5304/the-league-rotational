@@ -1,0 +1,61 @@
+<ui:composition 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<div class="col-md-3">
+		<ul class="list-group">
+			
+			<li class="list-group-item">
+				<form role="form" action="#{request.contextPath}/search.html" method="GET">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search" name="content" />
+						<input type="hidden" name="type" value="broad" />
+						<input type="hidden" name="page" value="1" />
+						<div class="input-group-btn">
+							<button class="btn btn-default" type="submit">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+					</div>
+				</form>
+			</li>
+
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading sidebar-heading">Social Media</h4>
+				<div class="list-group-item-text">
+					<a href="https://twitter.com/therotational" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @therotational</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				</div>
+
+				<div class="like-button-div list-group-item-text">
+					<div class="fb-like" data-href="https://www.facebook.com/leaguerotational" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+					<div id="fb-root"></div>
+				</div>
+			</li>
+			<li class="list-group-item">
+				<h4 class="list-group-item-heading sidebar-heading">About</h4>
+				<p class="list-group-item-text">
+					<em>The League Rotational</em>&#160; is a League of Legends news site dedicated to serving the highest quality of content to our
+					readers. We cover all things League of Legends, from the community to Riot Posts, from the best pro players in the world to Doublelift,
+					and more.
+				</p>
+				<br />
+				<p class="list-group-item-text">If you'd like to donate to keep the site running, you are welcome to.</p><br/>
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+						<input type="hidden" name="cmd" value="_s-xclick"/>
+						<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+						"/>
+						<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"/>
+						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"/>
+					</form>
+					
+
+				<small style="font-size:8px;">(It's also satirical.)</small>
+			</li>
+		</ul>
+	</div>
+	
+</ui:composition>
+

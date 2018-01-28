@@ -1,0 +1,71 @@
+<ui:composition template="template.xhtml" xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<ui:param name="articles" value="#{indexBean.recentArticles}" />
+
+	<ui:define name="content">
+		<div class="row index-content">
+			<div class="index-main-content col-md-9">
+				<div class="jumbotron text-center">
+
+					<h:form rendered="#{not empty articles[0].image}">
+						<h:link outcome="article?url=#{articles[0].url}">
+							<img class="jumbotron-image img-responsive" src="#{request.contextPath}/#{articles[0].image}" />
+						</h:link>
+					</h:form>
+
+					<h1>
+						<h:link outcome="article?url=#{articles[0].url}" value="#{articles[0].title}" />
+					</h1>
+
+					<h4>#{articles[0].date}</h4>
+
+					<p>#{articles[0].description}</p>
+
+				</div>
+
+
+				<div id="recent-news-entire-section" class="panel panel-default">
+					<div class="recent-news-panel-body panel-body">
+						<div class="recent-news-title-row row">
+							<div class="col-md-12">
+								<span class="recent-news-title">Recent News</span>
+								<h:link outcome="search?type=all&amp;content=Recent News&amp;page=1">
+									<button class="btn btn-default pull-right view-all-news-btn">View all news</button>
+								</h:link>
+							</div>
+						</div>
+
+						<ui:repeat value="#{articles}" var="article" varStatus="status">
+							<h:form rendered="#{status.index ne 0}">
+								<h:form rendered="#{status.odd}">
+									<h:outputText value="&lt;div class=&quot;row&quot;&gt;" escape="false" />
+								</h:form>
+
+								<div class="recent-news-block col-md-6">
+									<h3>
+										<h:link class="recent-news-link" outcome="article?url=#{article.url}" value="#{article.title}" />
+									</h3>
+
+									<h5 class="recent-news-date">
+										<em>- #{article.date}</em>
+									</h5>
+									<p>#{article.description}</p>
+								</div>
+
+								<h:form rendered="#{status.even}">
+									<h:outputText value="&lt;/div&gt;" escape="false" />
+								</h:form>
+							</h:form>
+						</ui:repeat>
+
+					</div>
+				</div>
+			</div>
+
+			<ui:include src="components/sidebar.xhtml" />
+
+		</div>
+	</ui:define>
+
+</ui:composition>
