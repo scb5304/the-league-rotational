@@ -112,7 +112,7 @@ public class DataProvider {
 		Connection conn = null;
 
 		try {
-			//Ouch. I actually information in the source code when I wrote this. Bad, past Steve!
+			//Ouch. I actually put this information in the source code when I wrote this. Bad, past Steve!
 			conn = DriverManager.getConnection("jdbc:mysql://localhost/the_league_rotational", "<redacted>", "<redacted>");
 		} catch (SQLException ex) {
 			System.out.println("SQLException: " + ex.getMessage());
